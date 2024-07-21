@@ -1,6 +1,5 @@
 package com.core.accountbook.common.exception;
 
-import com.core.accountbook.common.exception.globalerror.GlobalErrorCode;
 import com.core.accountbook.common.exception.globalerror.UnExpectedErrorCode;
 import com.core.accountbook.common.response.ResultResponse;
 import lombok.extern.slf4j.Slf4j;
