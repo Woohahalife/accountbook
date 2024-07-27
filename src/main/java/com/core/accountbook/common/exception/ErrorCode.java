@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 public interface ErrorCode {
 
     String name();
-    Boolean getIsSuccess();
+    boolean isSuccess();
     int getStatusCode();
     String getMessage();
 }
