@@ -21,3 +21,10 @@ spring:
       hibernate:
         default_batch_fetch_size: 50
         format_sql: true
+
+access-token:
+  secret-key: 1234567890123456789012345678901212345678901234567890123456789012
+  expire-length: 12345
+
+refresh-token:
+  expire-length: 12345
