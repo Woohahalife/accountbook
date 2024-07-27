@@ -32,7 +32,7 @@ public final class ResultResponse<T> {
 
     public static <T> ResultResponse<T> failure(ErrorCode errorCode) {
         return new ResultResponse<>(
-                errorCode.getIsSuccess(),
+                errorCode.isSuccess(),
                 errorCode.getStatusCode(),
                 errorCode.getMessage(),
                 errorCode.name(),
@@ -41,7 +41,7 @@ public final class ResultResponse<T> {
 
     public static <T> ResultResponse<T> failure(ErrorCode errorCode, String errorMessage) {
         return new ResultResponse<>(
-                errorCode.getIsSuccess(),
+                errorCode.isSuccess(),
                 errorCode.getStatusCode(),
                 errorMessage,
                 errorCode.name(),

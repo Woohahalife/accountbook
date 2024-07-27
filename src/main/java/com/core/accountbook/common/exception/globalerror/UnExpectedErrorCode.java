@@ -1,9 +1,11 @@
 package com.core.accountbook.common.exception.globalerror;
 
 import com.core.accountbook.common.exception.ErrorCode;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 
+@Getter
 @RequiredArgsConstructor
 public enum UnExpectedErrorCode implements ErrorCode {
 
@@ -13,18 +15,4 @@ public enum UnExpectedErrorCode implements ErrorCode {
     private final int statusCode;
     private final String message;
 
-    @Override
-    public Boolean getIsSuccess() {
-        return isSuccess;
-    }
-
-    @Override
-    public int getStatusCode() {
-        return statusCode;
-    }
-
-    @Override
-    public String getMessage() {
-        return message;
-    }
 }

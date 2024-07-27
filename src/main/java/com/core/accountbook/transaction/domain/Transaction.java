@@ -2,16 +2,12 @@ package com.core.accountbook.transaction.domain;
 
 import com.core.accountbook.categorydetail.domain.CategoryDetail;
 import com.core.accountbook.common.entity.BaseEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -25,6 +21,8 @@ public class Transaction extends BaseEntity {
 
     private TransactionType transactionType;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_detail_id")
     private CategoryDetail categoryDetail;
 
     private BigDecimal amount;

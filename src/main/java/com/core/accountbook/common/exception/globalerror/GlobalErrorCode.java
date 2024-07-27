@@ -1,8 +1,10 @@
 package com.core.accountbook.common.exception.globalerror;
 
 import com.core.accountbook.common.exception.ErrorCode;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+@Getter
 @RequiredArgsConstructor
 public enum GlobalErrorCode implements ErrorCode {
     ALREADY_DELETED_DATA(false, 400, "이미 삭제처리 된 데이터입니다.");
@@ -11,18 +13,4 @@ public enum GlobalErrorCode implements ErrorCode {
     private final int statusCode;
     private final String message;
 
-    @Override
-    public Boolean getIsSuccess() {
-        return isSuccess;
-    }
-
-    @Override
-    public int getStatusCode() {
-        return statusCode;
-    }
-
-    @Override
-    public String getMessage() {
-        return message;
-    }
 }

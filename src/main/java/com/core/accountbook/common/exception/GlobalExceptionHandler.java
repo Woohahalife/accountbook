@@ -19,7 +19,8 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Object> testExceptionHandler(DefaultException e) {
         log.error("[Exception] message: {} kind: {}", e.getMessage(), e.getClass().getSimpleName());
 
-        return e.getMessage() == null ? ResponseEntity.status(e.getErrorCode().getStatusCode()).body(e.getErrorCode()) :
+        return e.getMessage() == null ?
+                ResponseEntity.status(e.getErrorCode().getStatusCode()).body(e.getErrorCode()) :
                 ResponseEntity.status(e.getErrorCode().getStatusCode()).body(ResultResponse.failure(e.getErrorCode(), e.getMessage()));
     }
 
