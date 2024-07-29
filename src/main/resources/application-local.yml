@@ -22,9 +22,26 @@ spring:
         default_batch_fetch_size: 50
         format_sql: true
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: username
+    password: password
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 5000
+          connection-timeout: 5000
+          starttls:
+            enable: true
+            required: true
+
 access-token:
   secret-key: 1234567890123456789012345678901212345678901234567890123456789012
   expire-length: 12345
 
 refresh-token:
   expire-length: 12345
+
