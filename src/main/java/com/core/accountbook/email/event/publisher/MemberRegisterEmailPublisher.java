@@ -1,5 +1,6 @@
 package com.core.accountbook.email.event.publisher;
 
+import com.core.accountbook.common.event.DomainEvent;
 import com.core.accountbook.email.event.MemberRegisterEvent;
 import com.core.accountbook.member.domain.Member;
 import lombok.extern.slf4j.Slf4j;
@@ -17,9 +18,8 @@ public class MemberRegisterEmailPublisher implements ApplicationEventPublisherAw
     private static ApplicationEventPublisher applicationEventPublisher;
 
 
-    public static void publishEvent(final Member member) {
+    public static void publishEvent(DomainEvent event) {
         log.info("이벤트 발행 시작 - MemberRegisterEmailPublisher");
-        MemberRegisterEvent event = new MemberRegisterEvent(member);
 
         applicationEventPublisher.publishEvent(event);
         log.info("이벤트 발행 종료 - MemberRegisterEmailPublisher");
