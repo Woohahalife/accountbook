@@ -1,6 +1,8 @@
 package com.core.accountbook.member.domain;
 
 import com.core.accountbook.common.entity.BaseEntity;
+import com.core.accountbook.common.event.DomainEvent;
+import com.core.accountbook.email.event.MemberRegisterEvent;
 import com.core.accountbook.email.event.publisher.MemberRegisterEmailPublisher;
 import jakarta.persistence.*;
 import lombok.*;
@@ -67,7 +69,8 @@ public class Member extends BaseEntity {
 
     @PostPersist
     private void registerEvent() {
-        MemberRegisterEmailPublisher.publishEvent(this);
+        DomainEvent event = new MemberRegisterEvent(this);
+        MemberRegisterEmailPublisher.publishEvent(event);
     }
 
     public Password toPassword(String password) {

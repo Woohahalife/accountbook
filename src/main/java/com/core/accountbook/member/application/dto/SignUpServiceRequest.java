@@ -33,6 +33,5 @@ public class SignUpServiceRequest {
                 .lockCount(0)
                 .build();
     }
-
 }
 
